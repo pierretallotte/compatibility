@@ -9,9 +9,6 @@ var words = [];
 
 fs.readFile('dico.txt', 'utf8', (err, data) => {
     words = data.split('\n');
-    console.log(words);
-    console.log(words.length);
-    console.log(data);
 });
 
 class Game {

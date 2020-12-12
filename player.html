@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="player.js"></script>
+    </head>
+    <body onLoad="loadGame()">
+        <div id="load">
+            <p>Chargement en cours...</p>
+        </div>
+        <div id="starting" style="display: none;">
+            <p>Attente des autres joueurs</p>
+        </div>
+        <div id="waiting" style="display: none;">
+            <p>Attente d'un nouveau mot</p>
+        </div>
+        <div id="game" style="display: none;">
+            <p>Mot courant : <b><span id="word"></span></b></p>
+            <p>Référent : <b><span id="matcher"></span></b></p>
+            <p>Liste des images correspondants à ce mot (dans l'ordre, séparées par des '-') :</p>
+            <input type="text" id="images" />
+            <input type="button" value="Envoyer" onclick="sendImages()" />
+            <div id="image_list">
+                <IMAGES>
+            </div>
+        </div>
+        <div id="results" style="display: none;">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="master.js"></script>
+    </head>
+    <body onLoad="loadGame()">
+        <div id="load">
+            <p>Chargement en cours...</p>
+        </div>
+        <div id="starting"></div>
+        <div id="ranking"></div>
+        <div id="newWord" style="display: none">
+            <input type="button" value="Mot suivant" onclick="newWord()" />
+        </div>
+        <div id="game" style="display: none">
+            <p>Mot courant : <b><span id="word" /></b>
+            <p>Référent : <b><span id="matcher" /></b>
+            <div id="results"></div>
+        </div>
+    </body>
+</html>

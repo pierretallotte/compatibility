@@ -78,8 +78,38 @@ function waiting() {
         Send the list of images to the server.
 */
 function sendImages() {
-    console.log($('#images').val());
-    $.get("/compatibility/send", { players: getUrlParameter('players'), player: getUrlParameter('player'), images: $('#images').val() }).done((data) => {
+    var images = [];
+
+    for(i = 1; i < 6; i++) {
+        var image = $('#image' + i.toString()).val();
+
+        if(image == '') {
+            alert("Il faut renseigner tous les champs");
+            return;
+        }
+
+        if(!/^[0-9]+$/.test(image)) {
+            alert(image + " n'est pas un nombre");
+            return;
+        }
+
+        var n = parseInt(image);
+
+        if(n < 1 || n > 52) {
+            alert(image + " doit être compris entre 1 et 52");
+            return;
+        }
+
+        if(images.includes(n)) {
+            alert(image + " est utilisé plusieurs fois");
+            return;
+        }
+
+        images.push(n);
+    }
+    var images_text = images.join('-');
+    console.log(images_text);
+    $.get("/compatibility/send", { players: getUrlParameter('players'), player: getUrlParameter('player'), images: images_text }).done((data) => {
         $('#game').hide();
         $('#starting').show();
         refreshInterval = setInterval(waiting, 1000);

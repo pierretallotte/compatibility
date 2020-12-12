@@ -17,8 +17,14 @@
         <div id="game" style="display: none;">
             <p>Mot courant : <b><span id="word"></span></b></p>
             <p>Référent : <b><span id="matcher"></span></b></p>
-            <p>Liste des images correspondants à ce mot (dans l'ordre, séparées par des '-') :</p>
-            <input type="text" id="images" />
+            <!--<p>Liste des images correspondants à ce mot (dans l'ordre, séparées par des '-') :</p>
+            <input type="text" id="images" />-->
+            <p>Liste ordonnée des cinq images correspondant à ce mot :</p>
+            <input type="text" id="image1" />
+            <input type="text" id="image2" />
+            <input type="text" id="image3" />
+            <input type="text" id="image4" />
+            <input type="text" id="image5" />
             <input type="button" value="Envoyer" onclick="sendImages()" />
             <div id="image_list">
                 <IMAGES>

@@ -114,7 +114,7 @@ function sendImages() {
         images.push(n);
     }
     var images_text = images.join('-');
-    console.log(images_text);
+
     $.get("/compatibility/send", { players: getUrlParameter('players'), player: getUrlParameter('player'), images: images_text }).done((data) => {
         $('#game').hide();
         $('#starting').show();

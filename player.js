@@ -67,6 +67,12 @@ function waiting() {
 
             $('#results').html(html);
             $('#results').show();
+
+            $('#image1').val('');
+            $('#image2').val('');
+            $('#image3').val('');
+            $('#image4').val('');
+            $('#image5').val('');
         }
     });
     
